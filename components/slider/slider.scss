@@ -184,6 +184,14 @@
       transform-origin: left center;
       transform: scale(1.75);
       will-change: transform;
+
+	  
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
+	  
     }
 
     &__progress-wrap {
