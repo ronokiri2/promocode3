@@ -20,6 +20,8 @@
     left: 0;
 
     width: var(--col-9);
+	height: 70vh;
+
 
     transform-origin: left bottom;
     will-change: transform;
@@ -42,6 +44,12 @@
     z-index: 0;
   }
 
+  &__img {
+	transform: scale(1.75);
+	transform-origin: left center;
+	// height: 50vh;
+  }
+
   @media (min-width: 768px) {
     top: 10%;
 
@@ -53,7 +61,7 @@
 
     &__img {
       max-width: unset;
-      width: calc(100% + var(--col-3)) !important;
+    //   width: calc(100% + var(--col-3)) !important;
 
       will-change: transform;
     }

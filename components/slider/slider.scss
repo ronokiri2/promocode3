@@ -54,12 +54,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+	height: 70vh;
 
     pointer-events: none;
 
     will-change: transform;
   }
-
+//   &__item-img {
+//     height: 50vh;
+//   }
   &__item-img-wrap {
     position: absolute;
     top: 0;
@@ -112,6 +115,7 @@
     color: var(--color-white);
   }
 
+  
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
