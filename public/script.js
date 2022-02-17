@@ -56,14 +56,17 @@ class Placeholders {
       const x1 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.left - 20;
       const x2 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.left + 10;
       const x3 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.left;
+	  const x4 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[3].bounds.left;
 
       const y1 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.top + 10;
       const y2 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.top - 30;
       const y3 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.top + 30;
+	  const y4 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[3].bounds.top;
 
       const intersectX1 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].x;
       const intersectX2 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].x;
       const intersectX3 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].x;
+	  const intersectX4 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[3].x;
 
       const scale = _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.width / this.bounds.width;
       const rotation = 0;
@@ -93,11 +96,12 @@ class Placeholders {
         .to(this.dom.images[0], { duration: 1.67, ease: 'in-out-smooth', x: -x1, y: -y1, scale, rotation }, 'start')
         .to(this.dom.images[1], { duration: 1.67, ease: 'in-out-smooth', x: -x2, y: -y2, scale, rotation }, 'start')
         .to(this.dom.images[2], { duration: 1.67, ease: 'in-out-smooth', x: -x3, y: -y3, scale, rotation }, 'start')
+		.to(this.dom.images[3], { duration: 1.67, ease: 'in-out-smooth', x: -x4, y: -y4, scale, rotation }, 'start')
 
         .to(this.dom.images[0].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX1 }, 'start')
         .to(this.dom.images[1].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX2 }, 'start')
         .to(this.dom.images[2].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX3 }, 'start')
-
+		.to(this.dom.images[3].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX4 }, 'start')
         .set(this.dom.el, { autoAlpha: 0 }, 'start+=1.67')
 
       this.tlExpand.play();

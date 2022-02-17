@@ -54,7 +54,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-	height: 70vh;
+	height: 60vh;
 
     pointer-events: none;
 
@@ -147,7 +147,7 @@
     }
 
     &__container {
-      grid-template-columns: repeat(var(--slidesTotal), var(--col-4));
+      grid-template-columns: repeat(var(--slidesTotal), var(--col-3));
       grid-column-gap: 4.167vw;
 
       padding: 0 var(--col-1);
