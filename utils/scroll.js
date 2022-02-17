@@ -1,13 +1,13 @@
-import VirtualScroll from './locomotive-scroll.js';
+import VirtualScroll from './virtualscroll140.js';
+import LocomotiveScroll from './locomotive-scroll.js';
 import { gsap } from '../gsap.min.js';
-
 import { lerp, clamp } from './math';
 import { constants } from '../store/index.js';
 
 export default class Scroll {
   constructor() {
-    this.vs = new VirtualScroll();
-    this.vs.options.mouseMultiplier = 0.45;
+    this.vs = new LocomotiveScroll();
+    this.vs.options.Multiplier = 0.45;
 
     this.dom = {
       container: document.querySelector('[data-scroll]')
