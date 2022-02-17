@@ -618,13 +618,13 @@ body {
   }
   .slider__button-close {
     position: absolute;
-    top: 1.042vw;
+    top: -50px;
     left: calc(100vw - 14.23611vw - 2.083vw);
     right: unset;
   }
   .slider__button-close, .slider__button-close-icon {
-    width: 14.236vw;
-    height: 14.236vw;
+    width: 10.236vw;
+    height: 10.236vw;
   }
   .slider__button-close-icon {
     position: absolute;
@@ -639,7 +639,7 @@ body {
     cursor: grab;
   }
   .slider__item-heading {
-    font-size: 7.569vw;
+    font-size: 6vw;
     line-height: 6.944vw;
   }
   .slider__item-button {
