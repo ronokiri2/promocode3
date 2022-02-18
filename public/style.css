@@ -493,7 +493,7 @@ body {
   left: 0;
   width: var(--col-9);
   height: 60vh;
-  transform-origin: left bottom;
+  transform-origin: left center;
   will-change: transform;
 }
 .placeholders__img-wrap:first-child {
@@ -567,6 +567,11 @@ body {
   justify-content: center;
   height: 60vh;
   pointer-events: none;
+  will-change: transform;
+}
+.slider__item-img {
+  transform-origin: left center;
+  transform: scale(1.75);
   will-change: transform;
 }
 .slider__item-img-wrap {

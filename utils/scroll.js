@@ -1,4 +1,4 @@
-import VirtualScroll from './virtualscroll140.js';
+// import VirtualScroll from './virtualscroll2014.js';
 import LocomotiveScroll from './locomotive-scroll.js';
 import { gsap } from '../gsap.min.js';
 import { lerp, clamp } from './math';

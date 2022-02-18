@@ -60,9 +60,11 @@
 
     will-change: transform;
   }
-//   &__item-img {
-//     height: 50vh;
-//   }
+  &__item-img {
+	transform-origin: left center;
+	transform: scale(1.75);
+	will-change: transform;
+  }
   &__item-img-wrap {
     position: absolute;
     top: 0;
