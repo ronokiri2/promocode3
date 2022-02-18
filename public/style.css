@@ -592,6 +592,7 @@ body {
 }
 .slider__item-heading-wrap, .slider__item-button-wrap {
   display: flex;
+  font-family: system-ui, sans-serif;
   overflow: hidden;
 }
 .slider__item-button-wrap {
@@ -618,7 +619,7 @@ body {
     align-items: start;
     position: absolute;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 40px;
     overflow-x: unset;
   }
   .slider__button-close {
@@ -713,4 +714,46 @@ body {
 
 .is-device .slider .slider__progress-wrap {
   display: none;
+}
+
+.underslider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.underslider__logo {
+  width: 19.8567708vw;
+}
+.underslider__input {
+  width: 39.0625vw;
+  height: 4.329427083vw;
+  border-radius: 0.6510416667vw;
+  padding: 16px;
+  font-size: 1.62760417vw;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -0.2px;
+  color: #b9bdca;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 white;
+  box-shadow: inset 2px 2px 5px #b9bdca, inset -5px -5px 10px white;
+  appearance: none;
+  margin: 25px 0;
+  border: none;
+}
+.underslider__button {
+  width: 19.9544271vw;
+  height: 3.90625vw;
+  background-color: pink;
+  background: linear-gradient(88.48deg, #C32F77 0%, #CF2E47 100%);
+  border-radius: 0.325520833vw;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.30208333vw;
+  color: white;
+}
+.underslider__logo--mts {
+  width: 14.7135417vw;
 }

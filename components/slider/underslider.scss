@@ -1,0 +1,46 @@
+.underslider {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+
+	&__logo {
+		width: 19.8567708vw;
+	}
+
+	&__input {
+		width: 39.0625vw;
+		height: 4.329427083vw;
+		border-radius: 0.65104166666vw;
+		padding: 16px;
+		font-size: 1.62760417vw;
+		font-family: system-ui, sans-serif;
+		font-weight: 400;
+		text-align: center;
+		letter-spacing: -0.2px;
+		color: hsl(228, 14%, 76%);
+		background-color: hsl(228, 14%, 93%);
+		text-shadow: 1px 1px 0 white;
+		box-shadow:  inset 2px 2px 5px hsl(228, 14%, 76%), inset -5px -5px 10px white;
+		// transition: all 0.2s ease-in-out;
+		appearance: none;
+		margin: 25px 0;
+		border: none;
+	}
+
+	&__button {
+		width: 19.9544271vw;
+		height: 3.90625vw;
+		background-color: pink;
+		background: linear-gradient(88.48deg, #C32F77 0%, #CF2E47 100%);
+		border-radius: 0.325520833vw;
+		font-family: system-ui, sans-serif;
+		font-weight: 500;
+		font-size: 1.30208333vw;
+		color: white;
+	}
+
+	&__logo--mts {
+		width: 14.7135417vw;
+	}
+}
