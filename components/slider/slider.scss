@@ -55,7 +55,6 @@
     align-items: center;
     justify-content: center;
 	height: 60vh;
-
     pointer-events: none;
 
     will-change: transform;
@@ -124,6 +123,14 @@
 
 
 
+
+
+
+
+
+
+
+
   @media (min-width: 768px) {
     display: flex;
 	flex-direction: column;
@@ -157,7 +164,7 @@
     }
 
     &__container {
-      grid-template-columns: repeat(var(--slidesTotal), var(--col-3));
+      grid-template-columns: repeat(var(--slidesTotal), 20vw);
       grid-column-gap: 4.167vw;
 
       padding: 0 var(--col-1);
@@ -166,6 +173,10 @@
 
       cursor: grab;
     }
+
+    &__item {
+		height: 40vh;
+	  }
 
     &__item-heading {
       font-size: 6vw;
@@ -179,7 +190,7 @@
     &__item-img {
       max-width: unset;
       // width: calc(100% + var(--col-3)) !important;
-
+	 
       pointer-events: none;
       user-select: none;
 

@@ -24,7 +24,7 @@
 		box-shadow:  inset 2px 2px 5px hsl(228, 14%, 76%), inset -5px -5px 10px white;
 		// transition: all 0.2s ease-in-out;
 		appearance: none;
-		margin: 25px 0;
+		margin-top: 70px;
 		border: none;
 	}
 
@@ -38,9 +38,11 @@
 		font-weight: 500;
 		font-size: 1.30208333vw;
 		color: white;
+		margin-top: 70px;
 	}
 
 	&__logo--mts {
+		margin-top: 70px;
 		width: 14.7135417vw;
 	}
 }
