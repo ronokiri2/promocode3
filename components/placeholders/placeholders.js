@@ -1,7 +1,7 @@
 import gsap from '../../gsap.min.js';
 import { CustomEase } from '../../CustomEase.min.js';
 
-import { constants, instances } from '../../store';
+import { constants, instances } from '../../store/index.js';
 
 gsap.registerPlugin(CustomEase);
 
@@ -129,6 +129,9 @@ class Placeholders {
   init() {
     this.addListeners();
     this.setHoverAnimation();
+	setTimeout(() => {this.handleMouseenter()}, 200)
+	setTimeout(() => {this.handleClick()}, 2000)
+	;
   }
 }
 

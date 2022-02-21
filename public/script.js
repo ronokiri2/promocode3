@@ -10,7 +10,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_gsap_min_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _CustomEase_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _CustomEase_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_CustomEase_min_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _store_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 
 
 
@@ -51,21 +51,21 @@ class Placeholders {
 
   setExpandAnimation() {
     setTimeout(() => { // set timeout to make sure x position is set (parallax)
-      !_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice && _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.enable();
+      !_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice && _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.enable();
 
-      const x1 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.left - 20;
-      const x2 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.left + 10;
-      const x3 = this.bounds.left - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.left;
+      const x1 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.left - 20;
+      const x2 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.left + 10;
+      const x3 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.left;
 
-      const y1 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.top + 10;
-      const y2 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.top - 30;
-      const y3 = this.bounds.top - _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.top + 30;
+      const y1 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.top + 10;
+      const y2 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.top - 30;
+      const y3 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.top + 30;
 
-      const intersectX1 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].x;
-      const intersectX2 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].x;
-      const intersectX3 = _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].x;
+      const intersectX1 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].x;
+      const intersectX2 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].x;
+      const intersectX3 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].x;
 
-      const scale = _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.width / this.bounds.width;
+      const scale = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.width / this.bounds.width;
       const rotation = 0;
 
       this.tlExpand = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
@@ -76,7 +76,7 @@ class Placeholders {
         }
       });
 
-      if (_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
+      if (_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
         // set images position + rotation, because there's no hover animation on touch devices
         this.tlExpand.set(this.dom.images, { scale: 0.5, x: (window.innerWidth / 12) * 7, rotation: 0 });
       }
@@ -102,18 +102,18 @@ class Placeholders {
 
       this.tlExpand.play();
 
-      _store__WEBPACK_IMPORTED_MODULE_2__.instances.slider.open();
+      _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.open();
     }, 100);
   }
 
   handleMouseenter = () => {
-    if (this.state.animating || _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
+    if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
 
     this.tlHover.play();
   }
 
   handleMouseleave = () => {
-    if (this.state.animating || _store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
+    if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
 
     this.tlHover.reverse();
   }
@@ -142,6 +142,9 @@ class Placeholders {
   init() {
     this.addListeners();
     this.setHoverAnimation();
+	setTimeout(() => {this.handleMouseenter()}, 200)
+	setTimeout(() => {this.handleClick()}, 2000)
+	;
   }
 }
 
