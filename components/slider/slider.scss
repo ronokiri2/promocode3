@@ -178,8 +178,10 @@
 	//   }
 
     &__item-heading {
-      font-size: 7.569vw;
-      line-height: 6.944vw;
+      font-size: 4vw;
+      line-height: 120%;
+	  text-align: center;
+	  font-weight: 100;
     }
 
     &__item-button {
@@ -198,11 +200,11 @@
       will-change: transform;
 
 	  
-		// -webkit-user-drag: none;
-		// -khtml-user-drag: none;
-		// -moz-user-drag: none;
-		// -o-user-drag: none;
-		// user-drag: none;
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
 	  
     }
 

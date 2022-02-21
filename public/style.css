@@ -630,8 +630,10 @@ body {
     cursor: grab;
   }
   .slider__item-heading {
-    font-size: 7.569vw;
-    line-height: 6.944vw;
+    font-size: 4vw;
+    line-height: 120%;
+    text-align: center;
+    font-weight: 100;
   }
   .slider__item-button {
     margin: 1.389vw auto;
@@ -643,6 +645,11 @@ body {
     transform-origin: left center;
     transform: scale(1.75);
     will-change: transform;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
   }
   .slider__progress-wrap {
     display: block;
