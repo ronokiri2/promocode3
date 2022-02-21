@@ -36,7 +36,7 @@ class Slider {
       const bounds = el.getBoundingClientRect();
 
       this.items.push({
-        video: el.querySelector('video'),
+        img: el.querySelector('img'),
         bounds,
         x: 0,
       });
@@ -60,7 +60,7 @@ class Slider {
         const newMax = 0;
         item.x = ((percentage - 0) / (100 - 0)) * (newMax - newMin) + newMin;
 
-        item.video.style.transform = `translate3d(${item.x}px, 0, 0) scale(1.75)`;
+        item.img.style.transform = `translate3d(${item.x}px, 0, 0) scale(1.75)`;
       }
     });
 

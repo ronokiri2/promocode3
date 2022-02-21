@@ -81,9 +81,9 @@ class Placeholders {
         .to(this.dom.images[1], { duration: 1.67, ease: 'in-out-smooth', x: -x2, y: -y2, scale, rotation }, 'start')
         .to(this.dom.images[2], { duration: 1.67, ease: 'in-out-smooth', x: -x3, y: -y3, scale, rotation }, 'start')
 
-        .to(this.dom.images[0].querySelector('video'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX1 }, 'start')
-        .to(this.dom.images[1].querySelector('video'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX2 }, 'start')
-        .to(this.dom.images[2].querySelector('video'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX3 }, 'start')
+        .to(this.dom.images[0].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX1 }, 'start')
+        .to(this.dom.images[1].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX2 }, 'start')
+        .to(this.dom.images[2].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX3 }, 'start')
 	
         .set(this.dom.el, { autoAlpha: 0 }, 'start+=1.67')
 
