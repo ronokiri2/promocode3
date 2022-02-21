@@ -197,8 +197,9 @@ select {
 }
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-grey);
 }
 
 body {
@@ -207,21 +208,8 @@ body {
 }
 
 .app {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 1;
   background-color: var(--color-grey);
-}
-
-.is-device main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 body {
@@ -435,6 +423,7 @@ body {
 }
 
 .content {
+  margin-top: 100vh;
   display: flex;
   align-items: center;
   min-height: calc(var(--vh, 1vh) * 100);

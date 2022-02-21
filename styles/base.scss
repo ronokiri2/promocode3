@@ -1,7 +1,9 @@
 html,
 body {
-  height: 100%;
-  overflow: hidden;
+  min-height: 100%;
+//   overflow: hidden;
+overflow-x: hidden;
+background-color: var(--color-grey);
 }
 
 body {
@@ -11,22 +13,24 @@ body {
 }
 
 .app {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
   z-index: 1;
 
   background-color: var(--color-grey);
 }
 
 .is-device main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  // overflow-y: scroll;
-  // -webkit-overflow-scrolling: touch;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   overflow-y: scroll;
+//   -webkit-overflow-scrolling: touch;
 }
+
+// что если просто удалить контент в начале
