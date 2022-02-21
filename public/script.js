@@ -253,7 +253,7 @@ class Slider {
       const bounds = el.getBoundingClientRect();
 
       this.items.push({
-        img: el.querySelector('img'),
+        img: el.querySelector('video'),
         bounds,
         x: 0,
       });
