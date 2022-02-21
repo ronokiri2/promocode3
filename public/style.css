@@ -492,7 +492,6 @@ body {
   top: 0;
   left: 0;
   width: var(--col-9);
-  height: 40vh;
   transform-origin: left center;
   will-change: transform;
 }
@@ -517,10 +516,10 @@ body {
 @media (min-width: 768px) {
   .placeholders {
     top: 10%;
-    width: 20vw;
+    width: var(--col-4);
   }
   .placeholders__img-wrap {
-    width: 20vw;
+    width: var(--col-4);
   }
   .placeholders__img {
     max-width: unset;
@@ -565,7 +564,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
   pointer-events: none;
   will-change: transform;
 }
@@ -615,22 +613,21 @@ body {
 @media (min-width: 768px) {
   .slider {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    align-items: center;
     position: absolute;
     width: 100%;
-    margin-top: 40px;
+    height: 100vh;
     overflow-x: unset;
   }
   .slider__button-close {
     position: absolute;
-    top: -50px;
+    top: 1.042vw;
     left: calc(100vw - 14.23611vw - 2.083vw);
     right: unset;
   }
   .slider__button-close, .slider__button-close-icon {
-    width: 10.236vw;
-    height: 10.236vw;
+    width: 14.236vw;
+    height: 14.236vw;
   }
   .slider__button-close-icon {
     position: absolute;
@@ -638,17 +635,14 @@ body {
     left: 0;
   }
   .slider__container {
-    grid-template-columns: repeat(var(--slidesTotal), 20vw);
+    grid-template-columns: repeat(var(--slidesTotal), var(--col-4));
     grid-column-gap: 4.167vw;
     padding: 0 var(--col-1);
     height: unset;
     cursor: grab;
   }
-  .slider__item {
-    height: 40vh;
-  }
   .slider__item-heading {
-    font-size: 6vw;
+    font-size: 7.569vw;
     line-height: 6.944vw;
   }
   .slider__item-button {
@@ -661,15 +655,10 @@ body {
     transform-origin: left center;
     transform: scale(1.75);
     will-change: transform;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
   }
   .slider__progress-wrap {
     display: block;
-    margin: 50px auto;
+    position: absolute;
     left: var(--col-2);
     bottom: 3.125vw;
     width: var(--col-8);

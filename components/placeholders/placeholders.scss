@@ -20,7 +20,7 @@
     left: 0;
 
     width: var(--col-9);
-	height: 40vh;
+	// height: 40vh;
 
 
     transform-origin: left center;
@@ -53,10 +53,10 @@
   @media (min-width: 768px) {
     top: 10%;
 
-    width: 20vw;
+    width: var(--col-4);
 
     &__img-wrap {
-      width: 20vw;
+      width: var(--col-4);
     }
 
     &__img {
