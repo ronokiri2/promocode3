@@ -1,8 +1,10 @@
 .underslider {
+	margin-top: 100vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
 
 	&__logo {
 		width: 19.8567708vw;

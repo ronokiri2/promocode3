@@ -142,8 +142,8 @@ class Placeholders {
   init() {
     this.addListeners();
     this.setHoverAnimation();
-	setTimeout(() => {this.handleMouseenter()}, 200)
-	setTimeout(() => {this.handleClick()}, 2000)
+	setTimeout(() => {this.handleMouseenter()}, 0)
+	setTimeout(() => {this.handleClick()}, 1100)
 	;
   }
 }
