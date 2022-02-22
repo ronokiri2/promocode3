@@ -556,7 +556,7 @@ body {
   will-change: transform;
 }
 .slider__item-img {
-  transform-origin: left center;
+  transform-origin: center center;
   transform: scale(1.75);
   will-change: transform;
 }
