@@ -25,8 +25,8 @@ class Placeholders {
 		this.dom = {};
 		this.dom.el = document.querySelector('.js-placeholders');
 		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
-		this.dom.buttonOpen = document.querySelector('.js-slider-open');
-		this.dom.content = document.querySelector('.js-content');
+		// this.dom.buttonOpen = document.querySelector('.js-slider-open');
+		// this.dom.content = document.querySelector('.js-content');
 
 		this.bounds = this.dom.el.getBoundingClientRect();
 
@@ -114,15 +114,15 @@ class Placeholders {
 					autoAlpha: 1
 				})
 
-				.to(this.dom.buttonOpen, {
-					duration: 0.5,
-					autoAlpha: 0
-				})
+				// .to(this.dom.buttonOpen, {
+				// 	duration: 0.5,
+				// 	autoAlpha: 0
+				// })
 
-				.to(this.dom.content, {
-					duration: 0.8,
-					autoAlpha: 0
-				}, 'start')
+				// .to(this.dom.content, {
+				// 	duration: 0.8,
+				// 	autoAlpha: 0
+				// }, 'start')
 
 				.to(this.dom.images[0], {
 					duration: 1.67,
@@ -202,9 +202,9 @@ class Placeholders {
 	}
 
 	addListeners() {
-		this.dom.buttonOpen.addEventListener('click', this.handleClick);
-		this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
-		this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
+		// this.dom.buttonOpen.addEventListener('click', this.handleClick);
+		// this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
+		// this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
 		window.addEventListener('resize', this.handleResize);
 	}
 
@@ -304,12 +304,12 @@ class Slider {
 		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
 		// this.dom.headings = this.dom.el.querySelectorAll('.js-heading');
 		// this.dom.buttons = this.dom.el.querySelectorAll('.js-button');
-		this.dom.buttonOpen = document.querySelector('.js-slider-open');
-		this.dom.buttonClose = this.dom.el.querySelector('.js-slider-close');
-		this.dom.buttonCloseCircle = this.dom.buttonClose.querySelector('circle');
+		// this.dom.buttonOpen = document.querySelector('.js-slider-open');
+		// this.dom.buttonClose = this.dom.el.querySelector('.js-slider-close');
+		// this.dom.buttonCloseCircle = this.dom.buttonClose.querySelector('circle');
 		this.dom.progressWrap = this.dom.el.querySelector('.js-progress-wrap');
 		this.dom.progress = this.dom.el.querySelector('.js-progress');
-		this.dom.content = document.querySelector('.js-content');
+		// this.dom.content = document.querySelector('.js-content');
 
 		this.state = {
 			open: false,
@@ -370,9 +370,9 @@ class Slider {
 			paused: true
 		});
 
-		const length = this.dom.buttonCloseCircle.getTotalLength();
-		this.dom.buttonCloseCircle.style.strokeDasharray = length;
-		this.dom.buttonCloseCircle.style.strokeDashoffset = length;
+		// const length = this.dom.buttonCloseCircle.getTotalLength();
+		// this.dom.buttonCloseCircle.style.strokeDasharray = length;
+		// this.dom.buttonCloseCircle.style.strokeDashoffset = length;
 
 		tl
 			.addLabel('start')
@@ -395,19 +395,19 @@ class Slider {
 			.set(this.dom.progressWrap, {
 				autoAlpha: 0
 			})
-			.set(this.dom.buttonClose, {
-				autoAlpha: 0
-			})
+			// .set(this.dom.buttonClose, {
+			// 	autoAlpha: 0
+			// })
 
-			.to(this.dom.buttonClose, {
-				duration: 1.5,
-				autoAlpha: 1
-			}, '+=0.1')
-			.to(this.dom.buttonCloseCircle, {
-				duration: 1.5,
-				ease: 'Expo.easeInOut',
-				strokeDashoffset: 0
-			}, 'start+=0.1')
+			// .to(this.dom.buttonClose, {
+			// 	duration: 1.5,
+			// 	autoAlpha: 1
+			// }, '+=0.1')
+			// .to(this.dom.buttonCloseCircle, {
+			// 	duration: 1.5,
+			// 	ease: 'Expo.easeInOut',
+			// 	strokeDashoffset: 0
+			// }, 'start+=0.1')
 
 			.set(this.dom.items, {
 				autoAlpha: 1
@@ -494,22 +494,22 @@ class Slider {
 				autoAlpha: 0,
 				y
 			})
-			.to(this.dom.buttonClose, {
-				duration: 0.5,
-				autoAlpha: 0
-			}, 'start')
+			// .to(this.dom.buttonClose, {
+			// 	duration: 0.5,
+			// 	autoAlpha: 0
+			// }, 'start')
 			.to(this.dom.progressWrap, {
 				duration: 0.5,
 				autoAlpha: 0
 			}, 'start')
-			.to(this.dom.buttonOpen, {
-				duration: 0.5,
-				autoAlpha: 1
-			}, 'start+=0.5')
-			.to(this.dom.content, {
-				duration: 0.8,
-				autoAlpha: 1
-			}, 'start+=1.1')
+			// .to(this.dom.buttonOpen, {
+			// 	duration: 0.5,
+			// 	autoAlpha: 1
+			// }, 'start+=0.5')
+			// .to(this.dom.content, {
+			// 	duration: 0.8,
+			// 	autoAlpha: 1
+			// }, 'start+=1.1')
 			.set(this.dom.items, {
 				y: 0
 			})
@@ -528,7 +528,7 @@ class Slider {
 
 	addListeners() {
 		window.addEventListener('resize', this.handleResize);
-		this.dom.buttonClose.addEventListener('click', this.close);
+		// this.dom.buttonClose.addEventListener('click', this.close);
 	}
 
 	init() {

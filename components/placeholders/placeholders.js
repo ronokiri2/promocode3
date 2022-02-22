@@ -17,8 +17,8 @@ class Placeholders {
 		this.dom = {};
 		this.dom.el = document.querySelector('.js-placeholders');
 		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
-		this.dom.buttonOpen = document.querySelector('.js-slider-open');
-		this.dom.content = document.querySelector('.js-content');
+		// this.dom.buttonOpen = document.querySelector('.js-slider-open');
+		// this.dom.content = document.querySelector('.js-content');
 
 		this.bounds = this.dom.el.getBoundingClientRect();
 
@@ -106,15 +106,15 @@ class Placeholders {
 					autoAlpha: 1
 				})
 
-				.to(this.dom.buttonOpen, {
-					duration: 0.5,
-					autoAlpha: 0
-				})
+				// .to(this.dom.buttonOpen, {
+				// 	duration: 0.5,
+				// 	autoAlpha: 0
+				// })
 
-				.to(this.dom.content, {
-					duration: 0.8,
-					autoAlpha: 0
-				}, 'start')
+				// .to(this.dom.content, {
+				// 	duration: 0.8,
+				// 	autoAlpha: 0
+				// }, 'start')
 
 				.to(this.dom.images[0], {
 					duration: 1.67,
@@ -194,9 +194,9 @@ class Placeholders {
 	}
 
 	addListeners() {
-		this.dom.buttonOpen.addEventListener('click', this.handleClick);
-		this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
-		this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
+		// this.dom.buttonOpen.addEventListener('click', this.handleClick);
+		// this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
+		// this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
 		window.addEventListener('resize', this.handleResize);
 	}
 
