@@ -19,8 +19,8 @@ class Slider {
 		this.dom.container = this.dom.el.querySelector('.js-container');
 		this.dom.items = this.dom.el.querySelectorAll('.js-item');
 		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
-		this.dom.headings = this.dom.el.querySelectorAll('.js-heading');
-		this.dom.buttons = this.dom.el.querySelectorAll('.js-button');
+		// this.dom.headings = this.dom.el.querySelectorAll('.js-heading');
+		// this.dom.buttons = this.dom.el.querySelectorAll('.js-button');
 		this.dom.buttonOpen = document.querySelector('.js-slider-open');
 		this.dom.buttonClose = this.dom.el.querySelector('.js-slider-close');
 		this.dom.buttonCloseCircle = this.dom.buttonClose.querySelector('circle');
@@ -101,13 +101,13 @@ class Slider {
 				autoAlpha: 1
 			})
 
-			.set(this.dom.headings, {
-				y: -this.dom.headings[0].offsetHeight,
-				rotation: -5
-			})
-			.set(this.dom.buttons, {
-				y: -this.dom.buttons[0].offsetHeight * 1.7
-			})
+			// .set(this.dom.headings, {
+			// 	y: -this.dom.headings[0].offsetHeight,
+			// 	rotation: -5
+			// })
+			// .set(this.dom.buttons, {
+			// 	y: -this.dom.buttons[0].offsetHeight * 1.7
+			// })
 
 			.set(this.dom.progressWrap, {
 				autoAlpha: 0
@@ -148,19 +148,19 @@ class Slider {
 				this.state.scrollEnabled = true;
 			})
 
-			.to(this.dom.headings, {
-				duration: 1.6,
-				stagger: 0.15,
-				ease: 'in-out-smooth',
-				y: 0,
-				rotation: 0
-			}, 'start+=0.5')
-			.to(this.dom.buttons, {
-				duration: 1.6,
-				stagger: 0.15,
-				ease: 'in-out-smooth',
-				y: 0
-			}, 'start+=0.6')
+			// .to(this.dom.headings, {
+			// 	duration: 1.6,
+			// 	stagger: 0.15,
+			// 	ease: 'in-out-smooth',
+			// 	y: 0,
+			// 	rotation: 0
+			// }, 'start+=0.5')
+			// .to(this.dom.buttons, {
+			// 	duration: 1.6,
+			// 	stagger: 0.15,
+			// 	ease: 'in-out-smooth',
+			// 	y: 0
+			// }, 'start+=0.6')
 			.to(this.dom.progressWrap, {
 				duration: 0.6,
 				ease: 'in-out-smooth',
