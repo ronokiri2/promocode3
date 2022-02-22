@@ -1,50 +1,103 @@
 .underslider {
-	margin-top: 100vh;
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 
 	&__logo {
-		width: 19.8567708vw;
+		margin-top: 14.0625vw;
+		width: 50vw;
 	}
 
 	&__input {
-		width: 39.0625vw;
-		height: 4.329427083vw;
-		border-radius: 0.65104166666vw;
-		padding: 16px;
-		font-size: 1.62760417vw;
+		width: 87.5vw;
+		height: 13.75vw;
+		border-radius: 2.03125vw;
+		font-size: 5vw;
 		font-family: system-ui, sans-serif;
 		font-weight: 400;
 		text-align: center;
-		letter-spacing: -0.2px;
-		color: hsl(228, 14%, 76%);
+		color: hsl(0, 0%, 26%);
 		background-color: hsl(228, 14%, 93%);
 		text-shadow: 1px 1px 0 white;
 		box-shadow: inset 2px 2px 5px hsl(228, 14%, 76%), inset -5px -5px 10px white;
-		// transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 		appearance: none;
-		margin-top: 70px;
+		margin-top: 7.8vw;
 		border: none;
+	}
+	&__input::placeholder {
+		color: hsl(0, 0%, 67%);
 	}
 
 	&__button {
-		width: 19.9544271vw;
-		height: 3.90625vw;
+		width: 66.875vw;
+		height: 13.125vw;
 		background-color: pink;
 		background: linear-gradient(88.48deg, #C32F77 0%, #CF2E47 100%);
-		border-radius: 0.325520833vw;
+		border-radius: 1.09375vw;
 		font-family: system-ui, sans-serif;
-		font-weight: 500;
-		font-size: 1.30208333vw;
+		font-weight: 400;
+		font-size: 4.375vw;
 		color: white;
-		margin-top: 70px;
+		margin-top: 11.25vw;
 	}
 
 	&__logo--mts {
-		margin-top: 70px;
-		width: 14.7135417vw;
+		margin-top: 12.8125vw;
+		width: 40vw;
+	}
+}
+
+@media (min-width: 768px) {
+	.underslider {
+		margin-top: 100vh;
+		min-height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&__logo {
+			margin-top: 0;
+			width: 19.8567708vw;
+		}
+
+		&__input {
+			width: 39.0625vw;
+			height: 4.329427083vw;
+			border-radius: 0.65104166666vw;
+			padding: 16px;
+			font-size: 1.62760417vw;
+			font-family: system-ui, sans-serif;
+			font-weight: 400;
+			text-align: center;
+			letter-spacing: -0.2px;
+			color: hsl(228, 14%, 76%);
+			background-color: hsl(228, 14%, 93%);
+			text-shadow: 1px 1px 0 white;
+			box-shadow: inset 2px 2px 5px hsl(228, 14%, 76%), inset -5px -5px 10px white;
+			transition: all 0.2s ease-in-out;
+			appearance: none;
+			margin-top: 2.27864583vw;
+			border: none;
+		}
+
+		&__button {
+			width: 19.9544271vw;
+			height: 3.90625vw;
+			background-color: pink;
+			background: linear-gradient(88.48deg, #C32F77 0%, #CF2E47 100%);
+			border-radius: 0.325520833vw;
+			font-family: system-ui, sans-serif;
+			font-weight: 400;
+			font-size: 1.30208333vw;
+			color: white;
+			margin-top: 2.27864583vw;
+		}
+
+		&__logo--mts {
+			margin-top: 2.27864583vw;
+			width: 14.7135417vw;
+		}
 	}
 }
