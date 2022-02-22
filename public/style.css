@@ -556,7 +556,7 @@ body {
   will-change: transform;
 }
 .slider__item-img {
-  transform-origin: center center;
+  transform-origin: left center;
   transform: scale(1.75);
   will-change: transform;
 }
@@ -603,7 +603,7 @@ body {
     max-width: unset;
     pointer-events: none;
     user-select: none;
-    transform-origin: center center;
+    transform-origin: left center;
     transform: scale(1.75);
     will-change: transform;
     -webkit-user-drag: none;

@@ -67,7 +67,7 @@ class Slider {
 				const newMax = 0;
 				item.x = ((percentage - 0) / (100 - 0)) * (newMax - newMin) + newMin;
 
-				item.img.style.transform = `translate3d(${item.x}px, 0, 0) scale(1)`;
+				item.img.style.transform = `translate3d(${item.x}px, 0, 0) scale(1.75)`;
 			}
 		});
 
