@@ -1,5 +1,5 @@
 {
-  "dependencies": {
-    "virtual-scroll": "^1.5.2"
-  }
+	"dependencies": {
+		"virtual-scroll": "^1.5.2"
+	}
 }

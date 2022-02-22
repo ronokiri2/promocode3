@@ -21,131 +21,203 @@ _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().registerPlugin(_CustomEase_m
 _CustomEase_min_js__WEBPACK_IMPORTED_MODULE_1__.CustomEase.create('in-out-smooth', 'M0,0 C0.8,0 0.2,1 1,1');
 
 class Placeholders {
-  constructor() {
-    this.dom = {};
-    this.dom.el = document.querySelector('.js-placeholders');
-    this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
-    this.dom.buttonOpen = document.querySelector('.js-slider-open');
-    this.dom.content = document.querySelector('.js-content');
+	constructor() {
+		this.dom = {};
+		this.dom.el = document.querySelector('.js-placeholders');
+		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
+		this.dom.buttonOpen = document.querySelector('.js-slider-open');
+		this.dom.content = document.querySelector('.js-content');
 
-    this.bounds = this.dom.el.getBoundingClientRect();
+		this.bounds = this.dom.el.getBoundingClientRect();
 
-    this.state = {
-      animating: false
-    };
-  }
+		this.state = {
+			animating: false
+		};
+	}
 
-  setHoverAnimation() {
-    this.tlHover = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({ paused: true });
+	setHoverAnimation() {
+		this.tlHover = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
+			paused: true
+		});
 
-    this.tlHover
-      .addLabel('start')
+		this.tlHover
+			.addLabel('start')
 
-      .set(this.dom.el, { autoAlpha: 1 })
-      .set(this.dom.images, { scale: 0.5, x: (window.innerWidth / 12) * 1.2, rotation: 0 })
+			.set(this.dom.el, {
+				autoAlpha: 1
+			})
+			.set(this.dom.images, {
+				scale: 0.5,
+				x: (window.innerWidth / 12) * 1.2,
+				rotation: 0
+			})
 
-      .to(this.dom.images, { duration: 1, stagger: 0.07, ease: 'in-out-smooth', x: 0, y: 0 })
-      .to(this.dom.images[0], { duration: 1, ease: 'in-out-smooth', rotation: -4 }, 'start')
-      .to(this.dom.images[1], { duration: 1, ease: 'in-out-smooth', rotation: -2 }, 'start');
-  }
+			.to(this.dom.images, {
+				duration: 1,
+				stagger: 0.07,
+				ease: 'in-out-smooth',
+				x: 0,
+				y: 0
+			})
+			.to(this.dom.images[0], {
+				duration: 1,
+				ease: 'in-out-smooth',
+				rotation: -4
+			}, 'start')
+			.to(this.dom.images[1], {
+				duration: 1,
+				ease: 'in-out-smooth',
+				rotation: -2
+			}, 'start');
+	}
 
-  setExpandAnimation() {
-    setTimeout(() => { // set timeout to make sure x position is set (parallax)
-      !_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice && _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.enable();
+	setExpandAnimation() {
+		setTimeout(() => { // set timeout to make sure x position is set (parallax)
+			!_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice && _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.enable();
 
-      const x1 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.left - 20;
-      const x2 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.left + 10;
-      const x3 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.left;
+			const x1 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.left - 20;
+			const x2 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.left + 10;
+			const x3 = this.bounds.left - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.left;
 
-      const y1 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.top + 10;
-      const y2 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.top - 30;
-      const y3 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.top + 30;
+			const y1 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.top + 10;
+			const y2 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].bounds.top - 30;
+			const y3 = this.bounds.top - _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].bounds.top + 30;
 
-      const intersectX1 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].x;
-      const intersectX2 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].x;
-      const intersectX3 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].x;
+			const intersectX1 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].x;
+			const intersectX2 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[1].x;
+			const intersectX3 = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice ? 0 : _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[2].x;
 
-      const scale = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.width / this.bounds.width;
-      const rotation = 0;
+			const scale = _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.items[0].bounds.width / this.bounds.width;
+			const rotation = 0;
 
-      this.tlExpand = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
-        paused: true,
-        onComplete: () => {
-          this.state.animating = false;
-          this.setHoverAnimation();
-        }
-      });
+			this.tlExpand = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
+				paused: true,
+				onComplete: () => {
+					this.state.animating = false;
+					this.setHoverAnimation();
+				}
+			});
 
-      if (_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
-        // set images position + rotation, because there's no hover animation on touch devices
-        this.tlExpand.set(this.dom.images, { scale: 0.5, x: (window.innerWidth / 12) * 7, rotation: 0 });
-      }
+			if (_store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
+				// set images position + rotation, because there's no hover animation on touch devices
+				this.tlExpand.set(this.dom.images, {
+					scale: 0.5,
+					x: (window.innerWidth / 12) * 7,
+					rotation: 0
+				});
+			}
 
-      this.tlExpand
-        .addLabel('start')
+			this.tlExpand
+				.addLabel('start')
 
-        .set(this.dom.el, { autoAlpha: 1 })
+				.set(this.dom.el, {
+					autoAlpha: 1
+				})
 
-        .to(this.dom.buttonOpen, { duration: 0.5, autoAlpha: 0 })
+				.to(this.dom.buttonOpen, {
+					duration: 0.5,
+					autoAlpha: 0
+				})
 
-        .to(this.dom.content, { duration: 0.8, autoAlpha: 0 }, 'start')
+				.to(this.dom.content, {
+					duration: 0.8,
+					autoAlpha: 0
+				}, 'start')
 
-        .to(this.dom.images[0], { duration: 1.67, ease: 'in-out-smooth', x: -x1, y: -y1, scale, rotation }, 'start')
-        .to(this.dom.images[1], { duration: 1.67, ease: 'in-out-smooth', x: -x2, y: -y2, scale, rotation }, 'start')
-        .to(this.dom.images[2], { duration: 1.67, ease: 'in-out-smooth', x: -x3, y: -y3, scale, rotation }, 'start')
+				.to(this.dom.images[0], {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: -x1,
+					y: -y1,
+					scale,
+					rotation
+				}, 'start')
+				.to(this.dom.images[1], {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: -x2,
+					y: -y2,
+					scale,
+					rotation
+				}, 'start')
+				.to(this.dom.images[2], {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: -x3,
+					y: -y3,
+					scale,
+					rotation
+				}, 'start')
 
-        .to(this.dom.images[0].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX1 }, 'start')
-        .to(this.dom.images[1].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX2 }, 'start')
-        .to(this.dom.images[2].querySelector('img'), { duration: 1.67, ease: 'in-out-smooth', x: intersectX3 }, 'start')
-	
-        .set(this.dom.el, { autoAlpha: 0 }, 'start+=1.67')
+				.to(this.dom.images[0].querySelector('img'), {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: intersectX1
+				}, 'start')
+				.to(this.dom.images[1].querySelector('img'), {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: intersectX2
+				}, 'start')
+				.to(this.dom.images[2].querySelector('img'), {
+					duration: 1.67,
+					ease: 'in-out-smooth',
+					x: intersectX3
+				}, 'start')
 
-      this.tlExpand.play();
+				.set(this.dom.el, {
+					autoAlpha: 0
+				}, 'start+=1.67')
 
-      _store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.open();
-    }, 100);
-  }
+			this.tlExpand.play();
 
-  handleMouseenter = () => {
-    if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
+			_store_index_js__WEBPACK_IMPORTED_MODULE_2__.instances.slider.open();
+		}, 100);
+	}
 
-    this.tlHover.play();
-  }
+	handleMouseenter = () => {
+		if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
 
-  handleMouseleave = () => {
-    if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
+		this.tlHover.play();
+	}
 
-    this.tlHover.reverse();
-  }
+	handleMouseleave = () => {
+		if (this.state.animating || _store_index_js__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
 
-  handleClick = () => {
-    if (this.state.animating) return;
+		this.tlHover.reverse();
+	}
 
-    this.state.animating = true;
+	handleClick = () => {
+		if (this.state.animating) return;
 
-    this.setExpandAnimation();
-  }
+		this.state.animating = true;
 
-  handleResize = () => {
-    this.bounds = this.dom.el.getBoundingClientRect();
+		this.setExpandAnimation();
+	}
 
-    this.setHoverAnimation();
-  }
+	handleResize = () => {
+		this.bounds = this.dom.el.getBoundingClientRect();
 
-  addListeners() {
-    this.dom.buttonOpen.addEventListener('click', this.handleClick);
-    this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
-    this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
-    window.addEventListener('resize', this.handleResize);
-  }
+		this.setHoverAnimation();
+	}
 
-  init() {
-    this.addListeners();
-    this.setHoverAnimation();
-	setTimeout(() => {this.handleMouseenter()}, 0)
-	setTimeout(() => {this.handleClick()}, 1100)
-	;
-  }
+	addListeners() {
+		this.dom.buttonOpen.addEventListener('click', this.handleClick);
+		this.dom.buttonOpen.addEventListener('mouseenter', this.handleMouseenter);
+		this.dom.buttonOpen.addEventListener('mouseleave', this.handleMouseleave);
+		window.addEventListener('resize', this.handleResize);
+	}
+
+	init() {
+		this.addListeners();
+		this.setHoverAnimation();
+		setTimeout(() => {
+			this.handleMouseenter()
+		}, 0)
+		setTimeout(() => {
+			this.handleClick()
+		}, 1100);
+	}
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Placeholders);
@@ -195,14 +267,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "instances": function() { return /* binding */ instances; }
 /* harmony export */ });
 const constants = {
-  isDevice: false,
+	isDevice: false,
 };
 
 const instances = {
-  scroll: undefined,
-  slider: undefined,
+	scroll: undefined,
+	slider: undefined,
 };
-
 
 /***/ }),
 /* 5 */
@@ -225,174 +296,249 @@ _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().registerPlugin(_CustomEase_m
 _CustomEase_min_js__WEBPACK_IMPORTED_MODULE_1__.CustomEase.create('in-out-smooth', 'M0,0 C0.8,0 0.2,1 1,1');
 
 class Slider {
-  constructor() {
-    this.dom = {};
-    this.dom.el = document.querySelector('.js-slider');
-    this.dom.container = this.dom.el.querySelector('.js-container');
-    this.dom.items = this.dom.el.querySelectorAll('.js-item');
-    this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
-    this.dom.headings = this.dom.el.querySelectorAll('.js-heading');
-    this.dom.buttons = this.dom.el.querySelectorAll('.js-button');
-    this.dom.buttonOpen = document.querySelector('.js-slider-open');
-    this.dom.buttonClose = this.dom.el.querySelector('.js-slider-close');
-    this.dom.buttonCloseCircle = this.dom.buttonClose.querySelector('circle');
-    this.dom.progressWrap = this.dom.el.querySelector('.js-progress-wrap');
-    this.dom.progress = this.dom.el.querySelector('.js-progress');
-    this.dom.content = document.querySelector('.js-content');
+	constructor() {
+		this.dom = {};
+		this.dom.el = document.querySelector('.js-slider');
+		this.dom.container = this.dom.el.querySelector('.js-container');
+		this.dom.items = this.dom.el.querySelectorAll('.js-item');
+		this.dom.images = this.dom.el.querySelectorAll('.js-img-wrap');
+		this.dom.headings = this.dom.el.querySelectorAll('.js-heading');
+		this.dom.buttons = this.dom.el.querySelectorAll('.js-button');
+		this.dom.buttonOpen = document.querySelector('.js-slider-open');
+		this.dom.buttonClose = this.dom.el.querySelector('.js-slider-close');
+		this.dom.buttonCloseCircle = this.dom.buttonClose.querySelector('circle');
+		this.dom.progressWrap = this.dom.el.querySelector('.js-progress-wrap');
+		this.dom.progress = this.dom.el.querySelector('.js-progress');
+		this.dom.content = document.querySelector('.js-content');
 
-    this.state = {
-      open: false,
-      scrollEnabled: false,
-      progress: 0,
-    };
-  }
+		this.state = {
+			open: false,
+			scrollEnabled: false,
+			progress: 0,
+		};
+	}
 
-  setCache() {
-    this.items = [];
-    [...this.dom.items].forEach((el) => {
-      const bounds = el.getBoundingClientRect();
+	setCache() {
+		this.items = [];
+		[...this.dom.items].forEach((el) => {
+			const bounds = el.getBoundingClientRect();
 
-      this.items.push({
-        img: el.querySelector('img'),
-        bounds,
-        x: 0,
-      });
-    });
-  }
+			this.items.push({
+				img: el.querySelector('img'),
+				bounds,
+				x: 0,
+			});
+		});
+	}
 
-  render = () => {
-    if (_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
+	render = () => {
+		if (_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) return;
 
-    const scrollLast = Math.abs(_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last);
+		const scrollLast = Math.abs(_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last);
 
-    this.items.forEach((item) => {
-      const { bounds } = item;
-      const inView = scrollLast + window.innerWidth >= bounds.left && scrollLast < bounds.right;
+		this.items.forEach((item) => {
+			const {
+				bounds
+			} = item;
+			const inView = scrollLast + window.innerWidth >= bounds.left && scrollLast < bounds.right;
 
-      if (inView) {
-        const min = bounds.left - window.innerWidth;
-        const max = bounds.right;
-        const percentage = ((scrollLast - min) * 100) / (max - min);
-        const newMin = -(window.innerWidth / 12) * 3;
-        const newMax = 0;
-        item.x = ((percentage - 0) / (100 - 0)) * (newMax - newMin) + newMin;
+			if (inView) {
+				const min = bounds.left - window.innerWidth;
+				const max = bounds.right;
+				const percentage = ((scrollLast - min) * 100) / (max - min);
+				const newMin = -(window.innerWidth / 12) * 3;
+				const newMax = 0;
+				item.x = ((percentage - 0) / (100 - 0)) * (newMax - newMin) + newMin;
 
-        item.img.style.transform = `translate3d(${item.x}px, 0, 0) scale(1.75)`;
-      }
-    });
+				item.img.style.transform = `translate3d(${item.x}px, 0, 0) scale(1.75)`;
+			}
+		});
 
-    if (this.state.scrollEnabled) {
-      const min = 0;
-      const max = -_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.bounds.width + window.innerWidth;
-      this.state.progress = ((_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last - min) * 100) / (max - min) / 100;
+		if (this.state.scrollEnabled) {
+			const min = 0;
+			const max = -_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.bounds.width + window.innerWidth;
+			this.state.progress = ((_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last - min) * 100) / (max - min) / 100;
 
-      this.dom.progress.style.transform = `scaleX(${this.state.progress})`;
-    }
-  }
+			this.dom.progress.style.transform = `scaleX(${this.state.progress})`;
+		}
+	}
 
-  open = () => {
-    if (this.state.open) return;
+	open = () => {
+		if (this.state.open) return;
 
-    const tl = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({ paused: true });
+		const tl = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
+			paused: true
+		});
 
-    const length = this.dom.buttonCloseCircle.getTotalLength();
-    this.dom.buttonCloseCircle.style.strokeDasharray = length;
-    this.dom.buttonCloseCircle.style.strokeDashoffset = length;
+		const length = this.dom.buttonCloseCircle.getTotalLength();
+		this.dom.buttonCloseCircle.style.strokeDasharray = length;
+		this.dom.buttonCloseCircle.style.strokeDashoffset = length;
 
-    tl
-      .addLabel('start')
+		tl
+			.addLabel('start')
 
-      .set(this.dom.items, { autoAlpha: 0 })
-      .set(this.dom.el, { autoAlpha: 1 })
+			.set(this.dom.items, {
+				autoAlpha: 0
+			})
+			.set(this.dom.el, {
+				autoAlpha: 1
+			})
 
-      .set(this.dom.headings, { y: -this.dom.headings[0].offsetHeight, rotation: -5 })
-      .set(this.dom.buttons, { y: -this.dom.buttons[0].offsetHeight * 1.7 })
+			.set(this.dom.headings, {
+				y: -this.dom.headings[0].offsetHeight,
+				rotation: -5
+			})
+			.set(this.dom.buttons, {
+				y: -this.dom.buttons[0].offsetHeight * 1.7
+			})
 
-      .set(this.dom.progressWrap, { autoAlpha: 0 })
-      .set(this.dom.buttonClose, { autoAlpha: 0 })
+			.set(this.dom.progressWrap, {
+				autoAlpha: 0
+			})
+			.set(this.dom.buttonClose, {
+				autoAlpha: 0
+			})
 
-      .to(this.dom.buttonClose, { duration: 1.5, autoAlpha: 1 }, '+=0.1')
-      .to(this.dom.buttonCloseCircle, { duration: 1.5, ease: 'Expo.easeInOut', strokeDashoffset: 0 }, 'start+=0.1')
+			.to(this.dom.buttonClose, {
+				duration: 1.5,
+				autoAlpha: 1
+			}, '+=0.1')
+			.to(this.dom.buttonCloseCircle, {
+				duration: 1.5,
+				ease: 'Expo.easeInOut',
+				strokeDashoffset: 0
+			}, 'start+=0.1')
 
-      .set(this.dom.items, { autoAlpha: 1 }, 'start+=0.5')
-      .set(this.dom.images, { autoAlpha: 0 }, 'start+=0.5')
-      .set(this.dom.images, { autoAlpha: 1 }, 'start+=1.67')
+			.set(this.dom.items, {
+				autoAlpha: 1
+			}, 'start+=0.5')
+			.set(this.dom.images, {
+				autoAlpha: 0
+			}, 'start+=0.5')
+			.set(this.dom.images, {
+				autoAlpha: 1
+			}, 'start+=1.67')
 
-      .call(() => {
-        // reset scroll position
-        if (_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
-          this.dom.container.scrollLeft = 0;
-        } else {
-          _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.current = 0;
-          _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last = 0;
-        }
+			.call(() => {
+				// reset scroll position
+				if (_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
+					this.dom.container.scrollLeft = 0;
+				} else {
+					_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.current = 0;
+					_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last = 0;
+				}
 
-        this.state.scrollEnabled = true;
-      })
+				this.state.scrollEnabled = true;
+			})
 
-      .to(this.dom.headings, { duration: 1.6, stagger: 0.15, ease: 'in-out-smooth', y: 0, rotation: 0 }, 'start+=0.5')
-      .to(this.dom.buttons, { duration: 1.6, stagger: 0.15, ease: 'in-out-smooth', y: 0 }, 'start+=0.6')
-      .to(this.dom.progressWrap, { duration: 0.6, ease: 'in-out-smooth', autoAlpha: 1 }, 'start+=0.73');
+			.to(this.dom.headings, {
+				duration: 1.6,
+				stagger: 0.15,
+				ease: 'in-out-smooth',
+				y: 0,
+				rotation: 0
+			}, 'start+=0.5')
+			.to(this.dom.buttons, {
+				duration: 1.6,
+				stagger: 0.15,
+				ease: 'in-out-smooth',
+				y: 0
+			}, 'start+=0.6')
+			.to(this.dom.progressWrap, {
+				duration: 0.6,
+				ease: 'in-out-smooth',
+				autoAlpha: 1
+			}, 'start+=0.73');
 
-    tl.play();
+		tl.play();
 
-    this.state.open = true;
-  }
+		this.state.open = true;
+	}
 
-  close = () => {
-    if (!this.state.open) return;
+	close = () => {
+		if (!this.state.open) return;
 
-    _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.disable();
-    this.state.scrollEnabled = false;
+		_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.disable();
+		this.state.scrollEnabled = false;
 
-    const { top, height } = this.dom.items[0].getBoundingClientRect();
-    const y = window.innerHeight - top - height + height;
+		const {
+			top,
+			height
+		} = this.dom.items[0].getBoundingClientRect();
+		const y = window.innerHeight - top - height + height;
 
-    const tl = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({ paused: true, onComplete: () => {
-      if (!_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
-        // reset scroll position
-        _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.current = 0;
-        _store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last = 0;
-        this.state.progress = 0;
-      } else {
-        this.dom.container.scrollLeft = 0;
-      }
-    } });
+		const tl = _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().timeline({
+			paused: true,
+			onComplete: () => {
+				if (!_store__WEBPACK_IMPORTED_MODULE_2__.constants.isDevice) {
+					// reset scroll position
+					_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.current = 0;
+					_store__WEBPACK_IMPORTED_MODULE_2__.instances.scroll.state.last = 0;
+					this.state.progress = 0;
+				} else {
+					this.dom.container.scrollLeft = 0;
+				}
+			}
+		});
 
-    tl.addLabel('start');
+		tl.addLabel('start');
 
-    tl
-      .to(this.dom.items, { duration: 1.8, stagger: { each: 0.03, from: 'center' }, ease: 'in-out-smooth', autoAlpha: 0, y })
-      .to(this.dom.buttonClose, { duration: 0.5, autoAlpha: 0 }, 'start')
-      .to(this.dom.progressWrap, { duration: 0.5, autoAlpha: 0 }, 'start')
-      .to(this.dom.buttonOpen, { duration: 0.5, autoAlpha: 1 }, 'start+=0.5')
-      .to(this.dom.content, { duration: 0.8, autoAlpha: 1 }, 'start+=1.1')
-      .set(this.dom.items, { y: 0 })
-      .set(this.dom.el, { autoAlpha: 0 });
+		tl
+			.to(this.dom.items, {
+				duration: 1.8,
+				stagger: {
+					each: 0.03,
+					from: 'center'
+				},
+				ease: 'in-out-smooth',
+				autoAlpha: 0,
+				y
+			})
+			.to(this.dom.buttonClose, {
+				duration: 0.5,
+				autoAlpha: 0
+			}, 'start')
+			.to(this.dom.progressWrap, {
+				duration: 0.5,
+				autoAlpha: 0
+			}, 'start')
+			.to(this.dom.buttonOpen, {
+				duration: 0.5,
+				autoAlpha: 1
+			}, 'start+=0.5')
+			.to(this.dom.content, {
+				duration: 0.8,
+				autoAlpha: 1
+			}, 'start+=1.1')
+			.set(this.dom.items, {
+				y: 0
+			})
+			.set(this.dom.el, {
+				autoAlpha: 0
+			});
 
-    tl.play();
+		tl.play();
 
-    this.state.open = false;
-  }
+		this.state.open = false;
+	}
 
-  handleResize = () => {
-    this.setCache();
-  }
+	handleResize = () => {
+		this.setCache();
+	}
 
-  addListeners() {
-    window.addEventListener('resize', this.handleResize);
-    this.dom.buttonClose.addEventListener('click', this.close);
-  }
+	addListeners() {
+		window.addEventListener('resize', this.handleResize);
+		this.dom.buttonClose.addEventListener('click', this.close);
+	}
 
-  init() {
-    _gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().ticker.add(this.render);
-    this.setCache();
-    this.addListeners();
-  }
+	init() {
+		_gsap_min_js__WEBPACK_IMPORTED_MODULE_0___default().ticker.add(this.render);
+		this.setCache();
+		this.addListeners();
+	}
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Slider);
-
 
 /***/ }),
 /* 6 */
@@ -416,141 +562,145 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Scroll {
-  constructor() {
-    this.vs = new (_locomotive_scroll_js__WEBPACK_IMPORTED_MODULE_0___default())();
-    this.vs.options.Multiplier = 0.45;
+	constructor() {
+		this.vs = new (_locomotive_scroll_js__WEBPACK_IMPORTED_MODULE_0___default())();
+		this.vs.options.Multiplier = 0.45;
 
-    this.dom = {
-      container: document.querySelector('[data-scroll]')
-    };
+		this.dom = {
+			container: document.querySelector('[data-scroll]')
+		};
 
-    this.options = {
-      ease: 0.1,
-      dragSpeed: 1.5,
-    };
+		this.options = {
+			ease: 0.1,
+			dragSpeed: 1.5,
+		};
 
-    this.state = {
-      bounds: {},
-      current: 0,
-      last: 0,
-      dragStart: 0,
-      dragEnd: 0,
-    };
-  }
+		this.state = {
+			bounds: {},
+			current: 0,
+			last: 0,
+			dragStart: 0,
+			dragEnd: 0,
+		};
+	}
 
-  smooth = () => {
-    this.state.last = (0,_math__WEBPACK_IMPORTED_MODULE_2__.lerp)(this.state.last, this.state.current, this.options.ease);
-    this.dom.container.style.transform = `translate3d(${this.state.last}px, 0, 0)`;
-  }
+	smooth = () => {
+		this.state.last = (0,_math__WEBPACK_IMPORTED_MODULE_2__.lerp)(this.state.last, this.state.current, this.options.ease);
+		this.dom.container.style.transform = `translate3d(${this.state.last}px, 0, 0)`;
+	}
 
-  native = () => {
-    this.state.current = this.dom.container.scrollLeft;
-    this.state.last = (0,_math__WEBPACK_IMPORTED_MODULE_2__.lerp)(this.state.last, this.state.current, this.options.ease);
-  }
+	native = () => {
+		this.state.current = this.dom.container.scrollLeft;
+		this.state.last = (0,_math__WEBPACK_IMPORTED_MODULE_2__.lerp)(this.state.last, this.state.current, this.options.ease);
+	}
 
-  calc = (e) => {
-    this.state.current += e.deltaY;
-    this.state.current = Math.max((this.state.bounds.width - window.innerWidth) * -1, this.state.current);
-    this.state.current = Math.min(0, this.state.current);
-  }
+	calc = (e) => {
+		this.state.current += e.deltaY;
+		this.state.current = Math.max((this.state.bounds.width - window.innerWidth) * -1, this.state.current);
+		this.state.current = Math.min(0, this.state.current);
+	}
 
-  enable() {
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.vs.on(this.calc);
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.smooth);
-    } else {
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.native);
-    }
-  }
+	enable() {
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.vs.on(this.calc);
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.smooth);
+		} else {
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.native);
+		}
+	}
 
-  disable() {
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.vs.off(this.calc);
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.remove(this.smooth);
-    } else {
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.remove(this.native);
-    }
-  }
+	disable() {
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.vs.off(this.calc);
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.remove(this.smooth);
+		} else {
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.remove(this.native);
+		}
+	}
 
-  handleMouseup = () => {
-    this.state.dragging = false;
-    this.state.dragEnd = this.state.current;
+	handleMouseup = () => {
+		this.state.dragging = false;
+		this.state.dragEnd = this.state.current;
 
-    document.body.classList.remove('is-dragging');
-  }
+		document.body.classList.remove('is-dragging');
+	}
 
-  handleMousedown = (e) => {
-    this.state.dragging = true;
+	handleMousedown = (e) => {
+		this.state.dragging = true;
 
-    this.state.dragEnd = this.state.current;
-    this.state.dragStart = e.clientX;
+		this.state.dragEnd = this.state.current;
+		this.state.dragStart = e.clientX;
 
-    document.body.classList.add('is-dragging');
-  }
+		document.body.classList.add('is-dragging');
+	}
 
-  handleMousemove = (e) => {
-    if (!this.state.dragging) return;
+	handleMousemove = (e) => {
+		if (!this.state.dragging) return;
 
-    this.state.current = this.state.dragEnd + ((e.clientX - this.state.dragStart) * this.options.dragSpeed);
-    this.state.current = (0,_math__WEBPACK_IMPORTED_MODULE_2__.clamp)(this.state.current, 0, -this.state.bounds.width + window.innerWidth);
-  }
+		this.state.current = this.state.dragEnd + ((e.clientX - this.state.dragStart) * this.options.dragSpeed);
+		this.state.current = (0,_math__WEBPACK_IMPORTED_MODULE_2__.clamp)(this.state.current, 0, -this.state.bounds.width + window.innerWidth);
+	}
 
-  handleMouseleave = () => {
-    this.state.dragging = false;
-    this.state.dragEnd = this.state.current;
+	handleMouseleave = () => {
+		this.state.dragging = false;
+		this.state.dragEnd = this.state.current;
 
-    document.body.classList.remove('is-dragging');
-  }
+		document.body.classList.remove('is-dragging');
+	}
 
-  handleResize = () => {
-    this.state.bounds = this.dom.container.getBoundingClientRect();
-  }
+	handleResize = () => {
+		this.state.bounds = this.dom.container.getBoundingClientRect();
+	}
 
-  addListeners() {
-    window.addEventListener('resize', this.handleResize, { passive: true });
+	addListeners() {
+		window.addEventListener('resize', this.handleResize, {
+			passive: true
+		});
 
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.dom.container.addEventListener('mouseup', this.handleMouseup);
-      this.dom.container.addEventListener('mousedown', this.handleMousedown);
-      this.dom.container.addEventListener('mouseleave', this.handleMouseleave);
-      this.dom.container.addEventListener('mousemove', this.handleMousemove);
-    }
-  }
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.dom.container.addEventListener('mouseup', this.handleMouseup);
+			this.dom.container.addEventListener('mousedown', this.handleMousedown);
+			this.dom.container.addEventListener('mouseleave', this.handleMouseleave);
+			this.dom.container.addEventListener('mousemove', this.handleMousemove);
+		}
+	}
 
-  removeListeners() {
-    window.removeEventListener('resize', this.handleResize, { passive: true });
+	removeListeners() {
+		window.removeEventListener('resize', this.handleResize, {
+			passive: true
+		});
 
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.dom.container.removeEventListener('mouseup', this.handleMouseup);
-      this.dom.container.removeEventListener('mousedown', this.handleMousedown);
-      this.dom.container.removeEventListener('mouseleave', this.handleMouseleave);
-      this.dom.container.removeEventListener('mousemove', this.handleMousemove);
-    }
-  }
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.dom.container.removeEventListener('mouseup', this.handleMouseup);
+			this.dom.container.removeEventListener('mousedown', this.handleMousedown);
+			this.dom.container.removeEventListener('mouseleave', this.handleMouseleave);
+			this.dom.container.removeEventListener('mousemove', this.handleMousemove);
+		}
+	}
 
-  init() {
-    if (_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.handleResize();
-      this.vs.destroy();
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.native);
-    }
+	init() {
+		if (_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.handleResize();
+			this.vs.destroy();
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.native);
+		}
 
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.handleResize();
-      this.vs.on(this.calc);
-      _gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.smooth);
-      this.addListeners();
-      this.disable();
-    }
-  }
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.handleResize();
+			this.vs.on(this.calc);
+			_gsap_min_js__WEBPACK_IMPORTED_MODULE_1__.gsap.ticker.add(this.smooth);
+			this.addListeners();
+			this.disable();
+		}
+	}
 
-  destroy() {
-    if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
-      this.disable();
-      this.vs.destroy();
-      this.removeListeners();
-    }
-  }
+	destroy() {
+		if (!_store_index_js__WEBPACK_IMPORTED_MODULE_3__.constants.isDevice) {
+			this.disable();
+			this.vs.destroy();
+			this.removeListeners();
+		}
+	}
 }
 
 /***/ }),

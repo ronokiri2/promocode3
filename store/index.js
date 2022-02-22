@@ -1,8 +1,8 @@
 export const constants = {
-  isDevice: false,
+	isDevice: false,
 };
 
 export const instances = {
-  scroll: undefined,
-  slider: undefined,
+	scroll: undefined,
+	slider: undefined,
 };
