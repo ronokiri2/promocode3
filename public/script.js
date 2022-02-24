@@ -208,6 +208,7 @@ class Placeholders {
 		window.addEventListener('resize', this.handleResize);
 	}
 
+
 	init() {
 		this.addListeners();
 		this.setHoverAnimation();
@@ -218,6 +219,7 @@ class Placeholders {
 			this.handleClick()
 		}, 1100);
 	}
+
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Placeholders);

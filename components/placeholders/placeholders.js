@@ -200,6 +200,7 @@ class Placeholders {
 		window.addEventListener('resize', this.handleResize);
 	}
 
+
 	init() {
 		this.addListeners();
 		this.setHoverAnimation();
@@ -210,6 +211,7 @@ class Placeholders {
 			this.handleClick()
 		}, 1100);
 	}
+
 }
 
 export default Placeholders;
