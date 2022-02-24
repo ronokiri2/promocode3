@@ -13,9 +13,13 @@
 // страница отображалась только через полторы минуты
 // из-за медленной загрузки картинок
 window.onload = function () {
-    document.body.classList.add('loaded_hiding');
+    
+	window.setTimeout(function () {
+		document.body.classList.add('loaded_hiding');
+    }, 1000);
+
     window.setTimeout(function () {
     	document.body.classList.add('loaded');
     	document.body.classList.remove('loaded_hiding');
-    }, 300);
+    }, 5000);
 }
